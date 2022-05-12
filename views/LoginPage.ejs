@@ -1,0 +1,69 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="/style/TodoLoginStyle.css">
+    <title>Login Page</title>
+</head>
+<body>
+    <div class="wrapper"></div>
+
+    <div class="centerLine">
+        <div class="banner">
+            <h1>Todo List</h1>
+            <p>Developed by Hessam Hosseini</p>
+        </div>
+    <% if(!mainFlag){ %>
+        <div class="container">
+            <button class="tab" id="SignInBtn">Sign In</button>
+            <button class="tab" id="SignUpBtn"> Sign Up</button>
+
+            <div class="tabContainer " id="SignInPage">
+                <form action="">
+                    <input type="text" name="UserIn" id='UserIn' placeholder="Username">
+                    <input type="password" name="PassIn" id='PassIn' placeholder="Password">
+                    <br>
+                    <% if(!flag) { %>
+                        <p class="alert">&nbsp;&nbsp;&nbsp;&nbsp;<%= alert %></p>
+                        <br>
+                    <% }
+                    else { %>
+                        <br><br>
+                        <!-- <div class="hidden" id="todoDatas"><%= data %></div> -->
+                    <% } %>
+                    
+                    <a href="/SignIn/:," id="green">Sign In</a>
+                    <br>
+                    <a href="/Todo/" id='guestLink'>Sign in as guest.</a>
+                </form>
+            </div>
+            <div class="tabContainer hidden" id="SignUpPage">
+                <form action="">
+                    <input type="text" name="UserUp" id="UserUp" placeholder="Username">
+                    <input type="password" name="PassUp" id="PassUp" placeholder="Password">
+                    <input type="password" name="RePassUp" id="RePassUp" placeholder="Re-Password">
+                    <a href="/SignUp/:,," id="red">Sign Up</a>
+                    <br>
+                    <p class="alert">&nbsp;&nbsp;&nbsp;&nbsp;<%= SUAlert %></p>
+                </form>
+            </div>
+        </div>
+    <% }
+    else{ %>
+        <div class="container2">
+            <h1>Are you sure?</h1>
+            <form action="">
+                <a href="/Todo/" class="confirmBTN buttonType" >OK</a>
+                <a href="/Login/" class="cancelBTN buttonType" >Cancel</a>
+            </form>
+            <div class="hidden" id="todosData"><%= data %></div>
+            <div class="hidden" id="user"><%= username %></div>
+        </div>
+    <% } %>
+    </div>
+
+    <script src="/js/TodoLoginFuncs.js"></script>
+</body>
+</html>
