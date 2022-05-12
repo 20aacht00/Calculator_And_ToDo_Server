@@ -9,4 +9,4 @@ this server have two programs at the same time.
 1.  Click on Calculator button to open the calculator program.
 2.  Click on Todo button to open the todo list program.
 
-Developed by AliAsghar Chavoshi
+Developed by Ali Asghar Chavoshi
